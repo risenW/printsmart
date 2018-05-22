@@ -25,11 +25,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-//Cached version of home page
+//home page
 app.get('/', routes.home);  
 
+//Single product
 app.get('/single/:product?', routes.single);
 
+//Different types of banners
+app.get('/banners', routes.banners);
+
+//Any other page not listed up above renders an error
+app.get('**', routes.errorpage)
 
 
-  exports.app = functions.https.onRequest(app);
+
+exports.app = functions.https.onRequest(app);

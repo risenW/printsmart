@@ -9,3 +9,11 @@ exports.single = (req,res) =>{
     var product = req.params.product;
     res.send('Request for' + product);
 };
+
+exports.errorpage = (req,res) => {
+    res.render('404');
+}
+
+exports.banners = (req,res)=>{
+    res.render('banners', {title : "Order your Banners | cheap and high quality banners delivered to your doorstep"});
+}
