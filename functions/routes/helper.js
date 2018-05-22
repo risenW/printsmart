@@ -5,6 +5,7 @@ exports.home = (req,res)=>{
     res.render('index', {text : "Hello there again"});
 };
 
-exports.admin = (req,res) =>{
-    res.render('admin');
+exports.single = (req,res) =>{
+    var product = req.params.product;
+    res.send('Request for' + product);
 };

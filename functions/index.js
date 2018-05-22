@@ -28,6 +28,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Cached version of home page
 app.get('/', routes.home);  
 
+app.get('/single/:product?', routes.single);
+
 
 
   exports.app = functions.https.onRequest(app);
